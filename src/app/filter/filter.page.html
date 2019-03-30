@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon slot="start" name="arrow-back" routerLink="/tabs"></ion-icon>
+    <ion-title>Filter</ion-title>
+    <ion-icon name="checkmark" color="primary" [ngStyle]="{'font-size':'30px','padding-right':'17px'}" slot="end" (click)="setFilter()">Apply</ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- List of Sliding Items -->
+  <ion-list>
+    <ion-item (click)="openModal('Range',ranges)">
+      <ion-avatar class="filter-item">
+        <ion-icon name="time"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>Range</h2>
+        <p>{{range}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item (click)="openModal('Categories',categories)">
+      <ion-avatar class="filter-item">
+        <ion-icon name="apps"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>Categories</h2>
+        <p>{{category}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item (click)="openModal('Character Type',types)">
+      <ion-avatar class="filter-item">
+        <ion-icon name="menu"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>Character type</h2>
+        <p>{{characterType}}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item (click)="openModal('Movies',movies)">
+      <ion-avatar class="filter-item">
+        <ion-icon name="photos"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>Movies</h2>
+        <p>{{movie}}</p>
+      </ion-label>
+    </ion-item>
+    <!-- <ion-item (click)="openModal('Order By',orderBys)">
+      <ion-avatar class="filter-item">
+        <ion-icon name="funnel"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>Order By</h2>
+        <p>{{orderBy}}</p>
+      </ion-label>
+    </ion-item> -->
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,62 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+
+.header-md:after{
+    background-image: none;
+  }
+  .searchbar-input.sc-ion-searchbar-md{
+    border-radius: 8px;
+  }
+  .my-spinner{
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .images{
+    display:flex;
+    flex-wrap: wrap;
+  }
+  .images .image{
+    margin-right: 0.5rem;
+    flex-basis: calc(50% - 0.5rem);
+    margin-bottom: 0.5rem;
+    height: 150px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+  }
+  .image-fit{
+    position: absolute;
+    width: 100%;
+    transition: all .2s linear;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .layer{
+    position: absolute;
+    bottom: 0px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    transition: all .1s linear;
+    padding: 6px 8px;
+    color: #fff;
+  }
+  
+  .layer span{
+    font-size: 12px;
+  }
+  .my-hydrated{
+    padding-left: 8px;
+    padding-right: 10px;
+    margin-bottom: 0.8rem;
+}

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Take Photo</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- <ion-button (click)="takePicture()">Click Photo</ion-button> -->
+<ion-content>
+  <div class="images">
+    <div class="image" *ngFor="let image of images" [style.display]="!images.length?'none':''">
+      <img [src]="image" class="image-fit">
+    </div>
+    <div class="image" (click)="takePicture()" [ngStyle]="{
+      'border':'1px solid grey',
+      'display':'flex',
+      'justify-content':'center',
+      'align-items':'center',
+      'font-size':'4rem'
+    }">
+      <ion-icon name="camera" ></ion-icon>
+    </div>
+  </div>
+</ion-content>

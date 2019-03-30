@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar #input></ion-searchbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="my-spinner" *ngIf="!isLoad">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+  <div *ngIf="isLoad">
+    <div *ngIf="characters">
+      <div class="images">
+        <div class="image" *ngFor="let character of characters.results|filter:input.value"
+          (click)="openFullModal(character)">
+          <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" class="image-fit">
+          <div class="layer" *ngIf="character.name || character.title || character.firstName">
+            <span *ngIf="character.name">{{character.name}}</span>
+            <span *ngIf="character.title">{{character.title}}</span>
+            <span *ngIf="character.firstName">{{character.firstName}}</span>
+          </div>
+        </div>
+      </div>
+      <ion-toolbar class="my-hydrated">
+        <ion-button slot="start" (click)="getNextPrev(false)" *ngIf="characters.offset">
+          <ion-icon name="skip-backward"></ion-icon>
+        </ion-button>
+        <ion-button slot="end" (click)="getNextPrev()">
+          <ion-icon name="skip-forward"></ion-icon>
+        </ion-button>
+      </ion-toolbar>
+    </div>
+    <div *ngIf="message">
+      <ion-item>{{message}}</ion-item>
+      <ion-content>
+        <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+      </ion-content>
+    </div>
+  </div>
+</ion-content>

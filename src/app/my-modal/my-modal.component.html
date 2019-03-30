@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon slot="start" name="arrow-round-back" (click)="dismiss()" [style.fontSize]="'22px'"></ion-icon>
+    <ion-title>
+      <span *ngIf="character.name" [style.fontSize]="'15px'"><b>{{character.name}}</b></span>
+      <span *ngIf="character.title" [style.fontSize]="'15px'"><b>{{character.title}}</b></span>
+      <span *ngIf="character.firstName" [style.fontSize]="'15px'"><b>{{character.firstName}}</b></span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div>
+    <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" width="100%">
+  </div>
+  <div *ngIf="character.description" [style.padding]="'10px 15px'">
+    <ion-text color="dark">
+      <h1>Description</h1>
+    </ion-text>
+    <ion-text>
+      <span [ngStyle]="{'line-height':1.4}">{{character.description}}</span>
+    </ion-text>
+  </div>
+  
+</ion-content>
